@@ -14,7 +14,7 @@
             <input type="file" id="fileElem" multiple onchange="handleFiles(this.files)">
             <label class="button" for="fileElem">Выбрать изображения</label>
         </form>
-    </div>
+</div>
 
 @section scripts{
     
@@ -58,19 +58,16 @@
         function uploadFile(file) {
 
             console.log(file)
-            let url = 'Index?handler=myfile'
-            let formData = new FormData()
-            formData.append('file', file)
-            fetch(url, {
+            let url = '/index?handler=Myfile'
+            let data = new FormData()
+            data.set('file', file, file.name)
+            fetch('/Index?handler=Myfile', {
                 method: 'POST',
-                body: formData,
+                headers: { 'Content-Type': 'multipart/form-data' },
+                body: data
 
             })
-                .then(() => { })
-                .catch(() => {
-                    alert(
-                        'error')
-                })
+            
         }
 
     </script>

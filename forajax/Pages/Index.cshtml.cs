@@ -25,9 +25,9 @@ namespace forajax.Pages
 
         }
        
-        public void OnPostmyfile(IFormFile file)
+        public PartialViewResult OnPostMyfile(IFormFile file)
         {
-            
+            return Partial("Index");
         }
     }
 }
