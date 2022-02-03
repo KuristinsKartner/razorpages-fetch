@@ -57,6 +57,7 @@
 
         function uploadFile(file) {
 
+            console.log(file)
             let url = 'Index?handler=myfile'
             let formData = new FormData()
             formData.append('file', file)
